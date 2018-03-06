@@ -1,0 +1,42 @@
+.example-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.example-sidenav {
+  width: 300px;
+}
+
+.example-fill-remaining-space {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.radio-group {
+  margin-bottom: 1.25em;
+}
+
+.radio-group-label {
+  margin-right: 0.5em;
+}
+
+.example-80-width {
+  width: 80%;
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 500px;
+}
+
+.exapmle-card {
+  margin: 20px;
+}
+
+.example-data-grid {
+  margin: 20px;
+}

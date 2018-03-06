@@ -1,9 +1,97 @@
-<form class="example-form">
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Favorite food" value="Sushi">
-  </mat-form-field>
+<mat-sidenav-container class="example-container">
+  <mat-sidenav class="example-sidenav" [fixedInViewport]="fixed" #sidenav mode="over">
+    <mat-toolbar class="mat-elevation-z2" color="primary">
+      <span>
+        <button mat-icon-button>
+          <mat-icon (click)="sidenav.toggle()" aria-label="menu">menu</mat-icon>
+        </button>
 
-  <mat-form-field class="example-full-width">
-    <textarea matInput placeholder="Leave a comment"></textarea>
-  </mat-form-field>
-</form>
+        Example App
+      </span>
+    </mat-toolbar>
+
+    <mat-nav-list>
+      <a mat-list-item href="/">
+        <mat-icon matListIcon>folder</mat-icon>ホーム</a>
+      <a mat-list-item href="/">
+        <mat-icon matListIcon>folder</mat-icon>ホーム</a>
+      <a mat-list-item href="/">
+        <mat-icon matListIcon>folder</mat-icon>ホーム</a>
+      <a mat-list-item href="/">
+        <mat-icon matListIcon>folder</mat-icon>ホーム</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar class="mat-elevation-z2" color="primary">
+      <span>
+        <button mat-icon-button>
+          <mat-icon (click)="sidenav.toggle()" aria-label="menu">menu</mat-icon>
+        </button>
+
+        Example App
+      </span>
+
+      <span class="example-fill-remaining-space">
+        <mat-form-field class="example-80-width" floatLabel="never" color="accent">
+          <input matInput placeholder="Search">
+        </mat-form-field>
+      </span>
+
+      <span>
+        <button mat-icon-button>
+          <mat-icon aria-label="explore">explore</mat-icon>
+        </button>
+        <button mat-icon-button>
+          <mat-icon aria-label="home">home</mat-icon>
+        </button>
+      </span>
+    </mat-toolbar>
+
+    <mat-card class="exapmle-card">
+      <h2 class="mat-h2">Exapmle Data</h2>
+
+      <mat-form-field>
+        <input matInput placeholder="Input">
+      </mat-form-field>
+
+      <div class="radio-group">
+        <label class="radio-group-label">Float label</label>
+        <mat-radio-group>
+          <mat-radio-button value="1">Option 1</mat-radio-button>
+          <mat-radio-button value="2">Option 2</mat-radio-button>
+        </mat-radio-group>
+      </div>
+
+      <button mat-raised-button color="primary">Search</button>
+    </mat-card>
+
+    <div class="example-data-grid mat-elevation-z8">
+
+      <mat-table #table [dataSource]="dataSource">
+        <ng-container matColumnDef="position">
+          <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="weight">
+          <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="symbol">
+          <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
